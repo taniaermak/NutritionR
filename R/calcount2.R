@@ -56,3 +56,5 @@ helper_func <- function(food, amount){
   result <- paste("Your calorie count:", fatcal+carbcal+protcal)
   return(result)
 }
+
+devtools::document()
