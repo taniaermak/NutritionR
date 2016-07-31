@@ -57,4 +57,4 @@ helper_func <- function(food, amount){
   return(result)
 }
 
-devtools::document()
+
