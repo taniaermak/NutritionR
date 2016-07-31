@@ -1,0 +1,13 @@
+Package: NutritionR
+Type: Package
+Title: Nutrition data at your fingertips wow
+Version: 0.1
+Date: 2016-07-28
+Authors@R: person("Kevin+Tania", email = "tania@ixperience.co.za", role = c("aut", "cre"))
+Description: Provides a summary of your caloric intake and general dietary
+    habits
+License: What license is it under?
+LazyData: TRUE
+Imports: readr
+RoxygenNote: 5.0.1
+Suggests: testthat

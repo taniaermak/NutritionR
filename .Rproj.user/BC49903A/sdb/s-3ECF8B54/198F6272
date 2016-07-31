@@ -1,0 +1,18 @@
+{
+    "contents" : "\n# CREATE PACKAGE FUNCTIONS --------------------------------------------------------------------------------------------\n\n#recipes and sample data, package should install\n\n# 1. Create a calcount.R script in the R/ folder with the following contents.\n# 2. Copy the script below.\n\n#' Calculate the number of calories of a food item based on protein, carb, and fat data\n#'\n#' @param name Name of the food item\n#' @param amount Number of servings\n#' @param unit Unit of measure\n#' @return The number of calories consumed given the food type as well as protein, carb, and fat information\n\n\ncalcount2 <- function(name, amount, unit,file=\"R Package Data - Food1.csv\") {\n  food <- read_csv(file)\n  food$Name <-  tolower(food$Name)\n  unit = tolower(unit)\n\n  food = food[food$Name == name,]\n\n  check <- food$Name == name\n  if (!any(check)) stop(\"Unfortunately, your food item isn't in our database :(\", call. = FALSE)\n  #print(any(check))\n\n  if(unit == \"grams\") {\n     amount <- amount * 1\n     helper_func(food,amount)\n       }\n  else if(unit == \"cups\" || unit == \"cup\"){\n        amount <- amount * 128\n        helper_func(food,amount)\n       }\n\n         else if(unit == \"ounces\" || unit == \"oz\" || unit == \"ounce\"){\n             amount <- amount * 23\n             helper_func(food,amount)\n\n            }\n\n       else if(unit == \"pounds\" || unit == \"lbs\" || unit == \"lb\" || unit == \"pound\"){\n           amount <- amount * 435\n           helper_func(food,amount)\n           }\n       else {\n           return(\"Invalid\")\n          }\n}\n\nhelper_func <- function(food, amount){\n  fatcal <- (food$Protein*4*amount)\n  carbcal <- (food$Carbs*4*amount)\n  protcal <-(food$Fats*9*amount)\n  result <- paste(\"Your calorie count:\", fatcal+carbcal+protcal)\n  return(result)\n}\n",
+    "created" : 1469797905668.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1464122968",
+    "id" : "198F6272",
+    "lastKnownWriteTime" : 1470002971,
+    "path" : "~/Desktop/Data Science Data/NutritionR/R/calcount2.R",
+    "project_path" : "R/calcount2.R",
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
