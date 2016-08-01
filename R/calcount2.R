@@ -12,6 +12,7 @@
 #' @param amount Number of servings
 #' @param unit Unit of measure
 #' @return The number of calories consumed given the food type as well as protein, carb, and fat information
+#' @export
 
 
 calcount2 <- function(name, amount, unit,file="R Package Data - Food1.csv") {
